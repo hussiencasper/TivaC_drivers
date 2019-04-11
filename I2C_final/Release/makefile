@@ -145,7 +145,7 @@ all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 I2C_final.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: ARM Linker'
-	"F:/self/Embedded/2018/RTOS_SSCS/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"I2C_final.map" --heap_size=0 --stack_size=512 -i"F:/self/Embedded/2018/RTOS_SSCS/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"F:/self/Embedded/2018/RTOS_SSCS/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="I2C_final_linkInfo.xml" --rom_model -o "I2C_final.out" $(ORDERED_OBJS)
+	"F:/self/Embedded/2018/RTOS_SSCS/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me -O2 --define=ccs="ccs" --define=PART_TM4C123GH6PM --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"I2C_final.map" --heap_size=0 --stack_size=512 -i"F:/self/Embedded/2018/RTOS_SSCS/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/lib" -i"F:/self/Embedded/2018/RTOS_SSCS/ccsv7/tools/compiler/ti-cgt-arm_16.9.6.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="I2C_final_linkInfo.xml" --rom_model -o "I2C_final.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
